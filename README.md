@@ -7,4 +7,4 @@
 ## BetterCraft
  BetterCraft is a client made by <i>nzxter</i>. It has some great features like an IRC client with access to <b>irc.libera.chat#BetterCraft</b> channel (the rights to which I violently stole), proxy support, tor engine and a bunch of server crash exploits, but not a single hack. This, ultimately, makes it just a fancy exploit toolkit.
  
-<p style="text-align: center;">![BetterCraft channel on Libera is claimed by me](https://i.imgur.com/tPSJlBA.png)</p>
+<p align="center"><img src="https://i.imgur.com/tPSJlBA.png" alt="BetterCraft channel on Libera is claimed by me" /></p>
