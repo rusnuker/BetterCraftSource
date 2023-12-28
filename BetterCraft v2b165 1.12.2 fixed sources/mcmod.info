@@ -1,0 +1,22 @@
+[
+    {
+        "modid": "viabackwards",
+        "name": "ViaBackwards",
+        "version": "4.0.2-SNAPSHOT",
+        "description": "Allow older Minecraft versions to connect to a newer server version.",
+        "authorList": [
+            "Matsv",
+            "kennytv",
+            "Gerrygames",
+            "creeper123123321",
+            "ForceUpdate1"
+        ],
+        "requiredMods": [
+            "viaversion",
+            "spongeapi@5.0.0"
+        ],
+        "dependencies": [
+            "viaversion"
+        ]
+    }
+]

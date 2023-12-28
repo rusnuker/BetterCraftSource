@@ -1,0 +1,23 @@
+// 
+// Decompiled by Procyon v0.6.0
+// 
+
+package me.amkgre.bettercraft.client.mods.chunkanimator.easing;
+
+public class Quint
+{
+    public static float easeIn(float t, final float b, final float c, final float d) {
+        return c * (t /= d) * t * t * t * t + b;
+    }
+    
+    public static float easeOut(float t, final float b, final float c, final float d) {
+        return c * ((t = t / d - 1.0f) * t * t * t * t + 1.0f) + b;
+    }
+    
+    public static float easeInOut(float t, final float b, final float c, final float d) {
+        if ((t /= d / 2.0f) < 1.0f) {
+            return c / 2.0f * t * t * t * t * t + b;
+        }
+        return c / 2.0f * ((t -= 2.0f) * t * t * t * t + 2.0f) + b;
+    }
+}

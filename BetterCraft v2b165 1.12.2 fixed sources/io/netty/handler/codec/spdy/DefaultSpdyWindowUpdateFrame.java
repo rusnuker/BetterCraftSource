@@ -1,0 +1,51 @@
+// 
+// Decompiled by Procyon v0.6.0
+// 
+
+package io.netty.handler.codec.spdy;
+
+import io.netty.util.internal.StringUtil;
+
+public class DefaultSpdyWindowUpdateFrame implements SpdyWindowUpdateFrame
+{
+    private int streamId;
+    private int deltaWindowSize;
+    
+    public DefaultSpdyWindowUpdateFrame(final int streamId, final int deltaWindowSize) {
+        this.setStreamId(streamId);
+        this.setDeltaWindowSize(deltaWindowSize);
+    }
+    
+    @Override
+    public int streamId() {
+        return this.streamId;
+    }
+    
+    @Override
+    public SpdyWindowUpdateFrame setStreamId(final int streamId) {
+        if (streamId < 0) {
+            throw new IllegalArgumentException("Stream-ID cannot be negative: " + streamId);
+        }
+        this.streamId = streamId;
+        return this;
+    }
+    
+    @Override
+    public int deltaWindowSize() {
+        return this.deltaWindowSize;
+    }
+    
+    @Override
+    public SpdyWindowUpdateFrame setDeltaWindowSize(final int deltaWindowSize) {
+        if (deltaWindowSize <= 0) {
+            throw new IllegalArgumentException("Delta-Window-Size must be positive: " + deltaWindowSize);
+        }
+        this.deltaWindowSize = deltaWindowSize;
+        return this;
+    }
+    
+    @Override
+    public String toString() {
+        return StringUtil.simpleClassName(this) + StringUtil.NEWLINE + "--> Stream-ID = " + this.streamId() + StringUtil.NEWLINE + "--> Delta-Window-Size = " + this.deltaWindowSize();
+    }
+}

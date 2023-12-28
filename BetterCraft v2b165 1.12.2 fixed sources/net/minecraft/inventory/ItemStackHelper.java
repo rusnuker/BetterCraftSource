@@ -1,0 +1,55 @@
+// 
+// Decompiled by Procyon v0.6.0
+// 
+
+package net.minecraft.inventory;
+
+import net.minecraft.nbt.NBTBase;
+import net.minecraft.nbt.NBTTagList;
+import net.minecraft.util.NonNullList;
+import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.item.ItemStack;
+import java.util.List;
+
+public class ItemStackHelper
+{
+    public static ItemStack getAndSplit(final List<ItemStack> stacks, final int index, final int amount) {
+        return (index >= 0 && index < stacks.size() && !stacks.get(index).func_190926_b() && amount > 0) ? stacks.get(index).splitStack(amount) : ItemStack.field_190927_a;
+    }
+    
+    public static ItemStack getAndRemove(final List<ItemStack> stacks, final int index) {
+        return (index >= 0 && index < stacks.size()) ? stacks.set(index, ItemStack.field_190927_a) : ItemStack.field_190927_a;
+    }
+    
+    public static NBTTagCompound func_191282_a(final NBTTagCompound p_191282_0_, final NonNullList<ItemStack> p_191282_1_) {
+        return func_191281_a(p_191282_0_, p_191282_1_, true);
+    }
+    
+    public static NBTTagCompound func_191281_a(final NBTTagCompound p_191281_0_, final NonNullList<ItemStack> p_191281_1_, final boolean p_191281_2_) {
+        final NBTTagList nbttaglist = new NBTTagList();
+        for (int i = 0; i < p_191281_1_.size(); ++i) {
+            final ItemStack itemstack = p_191281_1_.get(i);
+            if (!itemstack.func_190926_b()) {
+                final NBTTagCompound nbttagcompound = new NBTTagCompound();
+                nbttagcompound.setByte("Slot", (byte)i);
+                itemstack.writeToNBT(nbttagcompound);
+                nbttaglist.appendTag(nbttagcompound);
+            }
+        }
+        if (!nbttaglist.hasNoTags() || p_191281_2_) {
+            p_191281_0_.setTag("Items", nbttaglist);
+        }
+        return p_191281_0_;
+    }
+    
+    public static void func_191283_b(final NBTTagCompound p_191283_0_, final NonNullList<ItemStack> p_191283_1_) {
+        final NBTTagList nbttaglist = p_191283_0_.getTagList("Items", 10);
+        for (int i = 0; i < nbttaglist.tagCount(); ++i) {
+            final NBTTagCompound nbttagcompound = nbttaglist.getCompoundTagAt(i);
+            final int j = nbttagcompound.getByte("Slot") & 0xFF;
+            if (j >= 0 && j < p_191283_1_.size()) {
+                p_191283_1_.set(j, new ItemStack(nbttagcompound));
+            }
+        }
+    }
+}
