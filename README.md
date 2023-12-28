@@ -1,6 +1,7 @@
 # BetterCraftSource
  BetterCraft v2b165 1.12.2 source code (decompiled with Procyon) + cleaned client jar.
 
+ Learn more over on BlackSpigot: [https://www.blackspigot.com/downloads/bettercraft-v1-3-best-modded-client.31158/](https://www.blackspigot.com/downloads/bettercraft-v1-3-best-modded-client.31158/)
  Download original: [https://nzxter.de.cool/download.php](https://nzxter.de.cool/download.php)
  
 ## BetterCraft
