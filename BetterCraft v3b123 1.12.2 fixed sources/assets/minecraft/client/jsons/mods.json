@@ -1,0 +1,44 @@
+{
+  "ModArmorStatus": {
+    "positions": {
+      "x": 833,
+      "y": 400
+    },
+    "enabled": true
+  },
+  "ModCPS": {
+    "positions": {
+      "x": 912,
+      "y": 415
+    },
+    "enabled": true
+  },
+  "ModInfo": {
+    "positions": {
+      "x": 89,
+      "y": 125
+    },
+    "enabled": true
+  },
+  "ModKeystrokes": {
+    "positions": {
+      "x": 899,
+      "y": 426
+    },
+    "enabled": true
+  },
+  "ModSkin": {
+    "positions": {
+      "x": 896,
+      "y": 329
+    },
+    "enabled": true
+  },
+  "ModRadar": {
+    "positions": {
+      "x": 878,
+      "y": 2
+    },
+    "enabled": true
+  }
+}

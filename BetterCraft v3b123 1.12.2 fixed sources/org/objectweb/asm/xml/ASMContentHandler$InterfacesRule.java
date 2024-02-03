@@ -1,0 +1,30 @@
+// 
+// Decompiled by Procyon v0.6.0
+// 
+
+package org.objectweb.asm.xml;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+
+final class ASMContentHandler$InterfacesRule extends ASMContentHandler$Rule
+{
+    final /* synthetic */ ASMContentHandler this$0;
+    
+    ASMContentHandler$InterfacesRule(final ASMContentHandler this$0) {
+        this.this$0 = this$0;
+        super(this$0);
+    }
+    
+    public final void end(final String s) {
+        final HashMap hashMap = (HashMap)this.this$0.pop();
+        final int intValue = hashMap.get("version");
+        final int access = this.getAccess(hashMap.get("access"));
+        final String name = hashMap.get("name");
+        final String signature = hashMap.get("signature");
+        final String superName = hashMap.get("parent");
+        final ArrayList list = hashMap.get("interfaces");
+        this.this$0.cv.visit(intValue, access, name, signature, superName, (String[])list.toArray(new String[list.size()]));
+        this.this$0.push(this.this$0.cv);
+    }
+}

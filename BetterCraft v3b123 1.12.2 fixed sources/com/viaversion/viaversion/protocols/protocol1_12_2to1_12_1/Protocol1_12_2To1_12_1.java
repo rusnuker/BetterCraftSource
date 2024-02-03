@@ -1,0 +1,33 @@
+// 
+// Decompiled by Procyon v0.6.0
+// 
+
+package com.viaversion.viaversion.protocols.protocol1_12_2to1_12_1;
+
+import com.viaversion.viaversion.api.protocol.remapper.PacketHandler;
+import com.viaversion.viaversion.api.type.Type;
+import com.viaversion.viaversion.api.protocol.remapper.PacketHandlers;
+import com.viaversion.viaversion.protocols.protocol1_12_1to1_12.ServerboundPackets1_12_1;
+import com.viaversion.viaversion.protocols.protocol1_12_1to1_12.ClientboundPackets1_12_1;
+import com.viaversion.viaversion.api.protocol.AbstractProtocol;
+
+public class Protocol1_12_2To1_12_1 extends AbstractProtocol<ClientboundPackets1_12_1, ClientboundPackets1_12_1, ServerboundPackets1_12_1, ServerboundPackets1_12_1>
+{
+    public Protocol1_12_2To1_12_1() {
+        super(ClientboundPackets1_12_1.class, ClientboundPackets1_12_1.class, ServerboundPackets1_12_1.class, ServerboundPackets1_12_1.class);
+    }
+    
+    @Override
+    protected void registerPackets() {
+        ((AbstractProtocol<ClientboundPackets1_12_1, CM, SM, SU>)this).registerClientbound(ClientboundPackets1_12_1.KEEP_ALIVE, new PacketHandlers() {
+            public void register() {
+                this.map(Type.VAR_INT, Type.LONG);
+            }
+        });
+        ((AbstractProtocol<CU, CM, SM, ServerboundPackets1_12_1>)this).registerServerbound(ServerboundPackets1_12_1.KEEP_ALIVE, new PacketHandlers() {
+            public void register() {
+                this.map(Type.LONG, Type.VAR_INT);
+            }
+        });
+    }
+}

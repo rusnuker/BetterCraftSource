@@ -1,0 +1,16 @@
+{
+  "Section": {
+    "list": {
+      "Misc": {
+        "ChunkAnim": true,
+        "FBP": true
+      }, 
+      "ESP": {
+        "Player": true,
+        "Mobs": false,
+        "Chest": false,
+        "Enderchest": false
+      }
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "FirstTime": {
+    "enabled": true
+  },
+  "Brand": {
+    "name": "BetterCraft"
+  },
+  "Command": {
+    "prefix": "."
+  },
+  "Alterning": {
+    "apikey": ""
+  }
+}

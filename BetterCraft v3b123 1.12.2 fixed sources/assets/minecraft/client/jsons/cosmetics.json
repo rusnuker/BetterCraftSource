@@ -1,0 +1,74 @@
+{
+  "CosmeticCape": {
+    "enabled": true
+  },
+  "CosmeticBandana": {
+    "enabled": false
+  },
+  "CosmeticBatWings": {
+    "enabled": false
+  },
+  "CosmeticBeeWings": {
+    "enabled": false
+  },
+  "CosmeticBlaze": {
+    "enabled": false
+  },
+  "CosmeticCap": {
+    "enabled": false
+  },
+  "CosmeticCrownKing": {
+    "enabled": true
+  },
+  "CosmeticCrystalWings": {
+    "enabled": false
+  },
+  "CosmeticDevilHorns": {
+    "enabled": false
+  },
+  "CosmeticDevilWings": {
+    "enabled": false
+  },
+  "CosmeticDragonWings": {
+    "enabled": false
+  },
+  "CosmeticEnderCrystal": {
+    "enabled": false
+  },
+  "CosmeticGalaxySkin": {
+    "enabled": false
+  },
+  "CosmeticGuardianSpikes": {
+    "enabled": false
+  },
+  "CosmeticHalo": {
+    "enabled": false
+  },
+  "CosmeticHeadset": {
+    "enabled": false
+  },
+  "CosmeticNerdGlasses": {
+    "enabled": false
+  },
+  "CosmeticSixPath": {
+    "enabled": false
+  },
+  "CosmeticSlimeGel": {
+    "enabled": false
+  },
+  "CosmeticSusanno": {
+    "enabled": false
+  },
+  "CosmeticTopHat": {
+    "enabled": false
+  },
+  "CosmeticVexWings": {
+    "enabled": false
+  },
+  "CosmeticVillagerNose": {
+    "enabled": false
+  },
+  "CosmeticWitchHat": {
+    "enabled": false
+  }
+}

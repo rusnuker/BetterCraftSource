@@ -1,0 +1,25 @@
+{
+  "Section": {
+    "list": {
+      "Background": {
+        "Tab": false,
+        "Scoreboard": false,
+        "Chat": false,
+        "Particel": true
+      },
+      "UI": {
+        "Hotbar": true,
+        "BlockOverlay": true,
+        "TransButton": true
+      },
+      "Animation": {
+        "Button": true,
+        "Chat": true,
+        "Disconnect": true
+      },
+      "Items": {
+        "Physic": true
+      }
+    }
+  }
+}
